@@ -4,7 +4,7 @@ import { useRecoilState } from "recoil";
 import { io } from "socket.io-client";
 import { roomState } from "../atoms/rooms.atom.js";
 
-const socket = io("https://backend-node-js-room-app-socket.vercel.app");
+const socket = io("http://localhost:8080");
 
 const RoomPage = () => {
   const { roomId } = useParams();

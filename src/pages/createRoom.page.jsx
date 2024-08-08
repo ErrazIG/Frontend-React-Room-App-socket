@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const socket = io("https://backend-node-js-room-app-socket.vercel.app"); // Remplace par l'URL de ton backend
+const socket = io("http://localhost:8080"); // Remplace par l'URL de ton backend
 
 const CreateRoom = () => {
   const [userName, setUserName] = useState("");
@@ -17,7 +17,7 @@ const CreateRoom = () => {
     }
     try {
       const response = await axios.post(
-        "https://backend-node-js-room-app-socket.vercel.app/api/room/create-room",
+        "http://localhost:8080/api/room/create-room",
         { userName }
       );
 
