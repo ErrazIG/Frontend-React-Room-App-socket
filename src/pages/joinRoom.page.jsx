@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:8080");
+const socket = io("https://backend-node-js-room-app-socket.vercel.app");
 
 const JoinRoom = () => {
   const [userName, setUserName] = useState("");
@@ -16,7 +16,7 @@ const JoinRoom = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/room/join-room",
+        "https://backend-node-js-room-app-socket.vercel.app/api/room/join-room",
         {
           userName,
           roomId,
